@@ -37,7 +37,10 @@
     --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
   }
   * { box-sizing: border-box; }
-  html, body { height: 100%; margin: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+  img, video { max-width: 100%; height: auto; }
+  .bubble table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+  .bubble th, .bubble td { border: 1px solid var(--border); padding: 6px 10px; }
   body {
     background: var(--bg);
     color: var(--text);
@@ -46,7 +49,8 @@
     line-height: 1.55;
     display: flex;
     flex-direction: column;
-    padding-top: env(safe-area-inset-top, 0px);
+    height: 100dvh;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) 0 env(safe-area-inset-left, 0px);
   }
 
   /* ---------- Header ---------- */
@@ -172,10 +176,28 @@
   .fine { text-align: center; color: var(--muted); font-size: 12px; margin: 8px 0 0; }
   .fine a { color: var(--muted); }
 
-  @media (max-width: 560px) {
+    @media (max-width: 560px) {
+    .welcome { padding-top: 4vh; }
     .welcome h2 { font-size: 22px; }
+    header { padding: 8px 12px; gap: 8px; }
     header h1 { font-size: 16px; }
+    .hbtn { padding: 6px 10px; font-size: 13px; }
+    #messages { padding: 14px 12px 6px; }
     .msg.user .bubble { max-width: 92%; }
+    footer { padding-left: 12px; padding-right: 12px; }
+  }
+  @media (max-width: 360px) {
+    header h1 { font-size: 15px; }
+    #themeBtn { display: none; }
+    .chip { padding: 4px 9px; font-size: 12px; }
+  }
+  @media (min-width: 1280px) {
+    body { font-size: 17px; }
+    #messages, .composer-wrap { max-width: 860px; }
+  }
+  @media (max-height: 480px) and (orientation: landscape) {
+    .welcome { padding-top: 1vh; }
+    .welcome .logo { display: none; }
   }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 </style>

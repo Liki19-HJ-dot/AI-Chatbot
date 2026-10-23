@@ -1,0 +1,23 @@
+{
+  "name": "open-ai-chat",
+  "version": "1.0.0",
+  "description": "A simple AI chat app: ask questions, get answers, and generate images. Node.js + Express + Google Gemini.",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "Likhith H J <19likhith@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0"
+  }
+}
